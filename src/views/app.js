@@ -7,7 +7,7 @@ var AppView = Backbone.View.extend({
     this.videos.add(exampleVideoData.map(movieData => new Video(movieData)));
     console.log(this.videos.models);
     this.videoPlayer = new VideoPlayerView();
-    this.videoList = new VideoListView();
+    this.videoList = new VideoListView({ collection: this.videos});
     this.render();
   },
 
