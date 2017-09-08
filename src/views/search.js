@@ -13,12 +13,14 @@ var SearchView = Backbone.View.extend({
   clickSearch: function() {
     var text = $('.form-control').val();
     this.collection.search(text);
+    this.collection.models[0].select();
   },
 
   enterSearch: function(event) {
     if (event.keyCode === 13) {
       var text = $('.form-control').val();
       this.collection.search(text);
+      this.colection.models[0].select();
     }
   },
 

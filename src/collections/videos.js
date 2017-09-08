@@ -6,10 +6,6 @@ var Videos = Backbone.Collection.extend({
   model: Video,
   url: 'https://www.googleapis.com/youtube/v3/search/',
 
-  initialize: function() {
-    
-  },
-
   search: function(query) {
     return this.fetch({
       data: {
@@ -21,6 +17,8 @@ var Videos = Backbone.Collection.extend({
         videoEmbeddable: true
       },
     });
+    
+   // console.log(answer);
   },
   
   parse: function(response) {
