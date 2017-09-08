@@ -7,8 +7,7 @@ var Videos = Backbone.Collection.extend({
   url: 'https://www.googleapis.com/youtube/v3/search/',
 
   initialize: function() {
-    this.search('Sloths');
-    //console.log(this);
+    
   },
 
   search: function(query) {
@@ -21,15 +20,10 @@ var Videos = Backbone.Collection.extend({
         key: window.YOUTUBE_API_KEY,
         videoEmbeddable: true
       },
-      success: function() {
-      }
     });
-    
-   // console.log(answer);
   },
   
   parse: function(response) {
-    console.log(response.items);
     return response.items;
   }
 
